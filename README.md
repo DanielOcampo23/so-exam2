@@ -37,7 +37,7 @@ do
 done
 ```
 
-Evidencia:
+Estos archivos los creamos en la carpeta ```/home/operativos/scripts/``` y les otorgamos permisos de ejecución.
 
  ![GitHub Logo1](images/2.PNG)
  
