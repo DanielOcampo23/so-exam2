@@ -36,7 +36,7 @@ do
    let i=i+1;
 done
 ```
-Este algoritmo lo único que realice es una suma dentro de un ciclo infinito, con el fin de que el haga este cálculo de forma indeterminada hasta que manualmente se pare este proceso.
+Este algoritmo lo único que realiza es una suma dentro de un ciclo infinito, con el fin de que el haga este cálculo de forma indeterminada hasta que manualmente se pare este proceso.
 
 Estos dos scripts los creamos en la carpeta ```/home/operativos/scripts/``` y les otorgamos permisos de ejecución.
 
