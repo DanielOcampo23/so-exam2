@@ -28,7 +28,7 @@ El segundo parcial del curso sistemas operativos trata sobre el manejo de namesp
 
 Primero creamos dos scripts para poder estresar el procesador, es decir con los que podamos ocupar el 100% de su capacidad de procesamiento, para esto ambos scripts (countA.sh y countB.sh) tienen el siguiente código:
 
-```
+```bash
 #!/bin/bash
 i=0;
 while true
@@ -44,16 +44,14 @@ Estos dos scripts los creamos en la carpeta ```/home/operativos/scripts/``` y le
  
  ![GitHub Logo1](images/3.PNG)
 
-Luego debemos crear estos dos scripts como servicios para que estos puedan ser administrados por systemd
+Luego debemos crear estos dos scripts como servicios para que estos puedan ser administrados por systemd, para esto debemos crear en el directorio ```/etc/systemd/system``` los archivos ```countA.service``` y ```countB.service```.
 
+![GitHub Logo1](images/4.PNG)
 
-Después de esto se tiene que crear como un servicio para poder ser ejecutado bajo systemd, para esto tenemos que ir a el directorio ```etc/systemd/system``` y dentro de esta carpeta crear ```countA.service``` y ```countB.service```
+Ejecutamos el comando ```systemctl daemon-reload``` para que el systemd vuelva a cargar todas las configuraciones nuevas que hemos adicionado, es decir para que incluya las configuraciones de los dos nuevos servicios. Después de esto verificamos con el comando ```systemctl status countA.service``` y el comando ```systemctl status countB.service``` si los dos servicios se cargaron exitosamente.
 
+![GitHub Logo1](images/5.PNG)
 
-
-Y después de esto ejecutamos el comando ```systemctl daemon-reload``` para que el systemd vuelva a cargar todas las configuraciones nuevas que le hemos agregado, que son los dos nuevos servicios que creamos anteriormente mostrados. Después de esto verificamos con el comando ```systemctl status countA.service``` para verificar si se cargaron los servicios al sistema y si por el momento inactivo el servicio
-
-(foto daemon )
 
 
 Después cambiamos el estado de los servicios con el comando ```systemctl enable countA.service``` y ```systemctl enable countB.service``` para poder agregar las propiedades del CPUQuota el cual restringe el porcentaje de uso del nucleo para esto ejecutamos el comando  ```systemctl set-property countA.service CPUQuota=50%``` para ambos servicios y posterior a esto se activirán dichos servicios con el seguiente comando ```systemctl start countA.service``` igualmente para ambos servicios y volvemos a verificar su estado para validar de que esté activo como lo mostrará la siguiente imagen
