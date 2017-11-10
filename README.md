@@ -22,7 +22,9 @@
 El segundo parcial del curso sistemas operativos trata sobre el manejo de namespaces, cgroups y virtualización por medio de LXC/LXD
 
 ### Solución
-3. Para realizar la prueba de concepto primero tenemos que asegurarnos de que la maquina en la cual estamos trabajando tiene un solo nucleo para esto se evidencia en las siguientes imagenes
+3. Para realizar esta prueba de concepto, utilizamos una maquina virtual con el sistema operativo CentOS 7 y la configuramos para que solo utilice un nucleo de nuestro procesador
+
+
 
 
 
