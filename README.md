@@ -103,7 +103,7 @@ CPUQuota: Por medio de un porcentaje se especifica cuanto tiempo máximo de CPU 
 CPUShares: Por medio de la cantidad de shares, entero con rango entre 2 a 262144 y por defecto es 1024, se puede determinar cuánto tiempo máximo de CPU se le puede asignar a un servicio, esto se realiza de la siguiente manera:
 Para saber el porcentaje CPU máximo que puede tomar un servicio, se toma la cantidad de shares que tiene este y se divide por la sumatoria de shares asignados a cada servicio. Tomando el ejemplo del punto 4, el proceso countA tiene 7168 shares de 10240 shares (sumatoria total) que representa el 70%. Hay que tener en cuenta que esta restricción solo se aplica si los demás servicios que tengan shares se estén ejecutando. Esta funcionalidad actualmente se encuentra obsoleta (deprecated) y se aconseja utilizar como reemplazo CPUWeight.
 
-Ambas funcionalidades pueden ser de gran ayuda para escenarios en particulares, 
+Es preferible utilizar un recurso de control sobre otro dependiendo de cada caso, por ejemplo, es preferible utilizar CPUQuota cuando existe un proceso donde consume bastantes recursos de la CPU y la pronta finalización de este proceso no es un factor importante, y que además existan otros procesos críticos en ejecución donde no queremos que el primer proceso no permita que estos respondan de manera correcta. Con CPUQuota garantizamos que nunca se va a pasar de ese umbral especificado. Por el contrario, es preferible utilizar CPUShares por ejemplo cuando tenemos varios procesos que necesitamos que realicen sus tareas los mas rápido posible, permitiendo que cuando un proceso finalice, lo demás puedan tomar los recursos de la CPU que este liberó.
 
 
 
