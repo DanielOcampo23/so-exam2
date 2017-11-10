@@ -94,6 +94,16 @@ Y por último observamos cómo el proceso que quedo vivo countB.sh (PID 3200) ah
 
 ![GitHub Logo1](images/15.PNG)
 
+5. De acuerdo a los dos ejercicios realizados y a fuentes de información en internet, podemos plantear una definición y hacer una comparación para los grupos de control CPUQuota y CPUShares.
+
+cgroups (abreviado de control groups) es una caracteristica del kernel de linux que limita, monitoriza y aísla el uso de los recursos (CPU, memoria RAM, lectura/escritura de disco, red, etc.) de una colección de procesos. Por eso, a través de archivos de configuración se pueden añadir restricciones a los servicios, entre estas CPUQuota y CPUShares.
+
+CPUQuota: Por medio de un porcentaje se especifica cuanto tiempo máximo de CPU se le puede asignar a un servicio, en el ejercicio 2 se observó cómo los dos procesos countA y countB nunca obtuvieron más del 50% de la CPU, así se ejecuten por separado o simultáneamente.
+
+CPUShares: 
+
+
+
 
 
 Las "CPUshares" le brindan la capacidad de controlar el derecho de recursos de la CPU de cargas de trabajo individuales cuando la carga de trabajo general del host o LPAR es pesada
