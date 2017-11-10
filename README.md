@@ -93,3 +93,9 @@ Luego detenemos el servicio countA
 Y por último observamos cómo el proceso que quedo vivo countB.sh (PID 3200) ahora utiliza el 99.9% de la CPU, ocupando el porcentaje de CPU que estaba siendo utilizado por el proceso countA.sh. Por lo que podemos concluir que con el atributo CPUShares la restricción solamente se cumple siempre y cuando los demás servicios que tengan CPUShares se estén ejecutando.
 
 ![GitHub Logo1](images/15.PNG)
+
+
+
+Las "CPUshares" le brindan la capacidad de controlar el derecho de recursos de la CPU de cargas de trabajo individuales cuando la carga de trabajo general del host o LPAR es pesada
+
+![GitHub Logo1](images/CPUShares.jpg)
