@@ -52,12 +52,23 @@ Ejecutamos el comando ```systemctl daemon-reload``` para que el systemd vuelva a
 
 ![GitHub Logo1](images/5.PNG)
 
+Después de esto, habilitamos los dos servicios con los comandos ```systemctl enable countA.service``` y ```systemctl enable countB.service``` para poder luego modificar sus propiedades con el comando ```systemctl set-property countA.service CPUQuota=50%``` y ```systemctl set-property countB.service CPUQuota=50%``` respectivamente. Con esto estamos poniéndole una restricción con la propiedad del CPUQuota para que ambos servicios solo puedan utilizar como límite máximo el 50% de la capacidad de procesamiento de la CPU.
 
+![GitHub Logo1](images/6.PNG)
 
-Después cambiamos el estado de los servicios con el comando ```systemctl enable countA.service``` y ```systemctl enable countB.service``` para poder agregar las propiedades del CPUQuota el cual restringe el porcentaje de uso del nucleo para esto ejecutamos el comando  ```systemctl set-property countA.service CPUQuota=50%``` para ambos servicios y posterior a esto se activirán dichos servicios con el seguiente comando ```systemctl start countA.service``` igualmente para ambos servicios y volvemos a verificar su estado para validar de que esté activo como lo mostrará la siguiente imagen
+Ahora podemos ejecutar estos dos servicios utilizando los comandos ```systemctl start countA.service``` y ```systemctl start countB.service``` y luego verificamos sus estados con los comandos ```systemctl status countA.service``` y ```systemctl status countA.service```.
 
-(foto activo)
+![GitHub Logo1](images/7.PNG)
 
+Con el comando ```top``` podemos observar en la siguiente imagen como cada uno de los dos procesos countA.sh (PID 3036) y countB.sh (PID 3043) tienen el 50% de la CPU.
+
+![GitHub Logo1](images/8.PNG)
+
+Luego detenemos el proceso countB.sh (PID 3043) con el comando ```systemctl stop countB.service``` y verificamos su estado.
+
+![GitHub Logo1](images/9.PNG)
+
+Después de esto podemos observamos cómo el proceso countA.sh (PID 3036) sigue utilizando el 49.8% de la CPU cumpliendo correctamente con la restricción que configuramos a pesar de que hay casi un 50% CPU libre.
 
 
 
