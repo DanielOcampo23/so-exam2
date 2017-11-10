@@ -24,7 +24,7 @@ El segundo parcial del curso sistemas operativos trata sobre el manejo de namesp
 ### Solución
 3. Para realizar esta prueba de concepto, utilizamos una maquina virtual con el sistema operativo CentOS 7 y la configuramos para que solo utilice un nucleo de nuestro procesador
 
- ![GitHub Logo1](images/1.png)
+ ![GitHub Logo1](images/1.PNG)
 
 
 
