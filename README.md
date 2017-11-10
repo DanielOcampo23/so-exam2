@@ -22,10 +22,26 @@
 El segundo parcial del curso sistemas operativos trata sobre el manejo de namespaces, cgroups y virtualización por medio de LXC/LXD
 
 ### Solución
-3. Para realizar esta prueba de concepto, utilizamos una maquina virtual con el sistema operativo CentOS 7 y la configuramos para que solo utilice un nucleo de nuestro procesador
+3. Para realizar esta prueba de concepto, utilizamos una máquina virtual con el sistema operativo CentOS 7 y la configuramos para que solo utilice un núcleo de nuestro procesador.
 
  ![GitHub Logo1](images/1.PNG)
 
+Primero creamos dos scripts para poder estresar el procesador, es decir con los que podamos ocupar el 100% de su capacidad de procesamiento, para esto ambos scripts (countA.sh y countB.sh) tienen el siguiente código:
+
+```
+#!/bin/bash
+i=0;
+while true
+do
+   let i=i+1;
+done
+```
+
+Evidencia:
+
+ ![GitHub Logo1](images/2.PNG)
+ 
+ ![GitHub Logo1](images/3.PNG)
 
 
 
