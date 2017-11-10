@@ -84,6 +84,12 @@ Ejecutamos los dos procesos y verificamos su estado.
 
 En la siguiente imagen podemos observar efectivamente como el proceso countA.sh (PID 3193) ocupa el 69.8% de la CPU y el proceso countB.sh (PID 3200) ocupa solo el 29.6% de la CPU, ambos respetando las restricciones impuestas.
 
+![GitHub Logo1](images/13.PNG)
 
+Luego detenemos el servicio countA
 
+![GitHub Logo1](images/14.PNG)
 
+Y por último observamos cómo el proceso que quedo vivo countB.sh (PID 3200) ahora utiliza el 99.9% de la CPU, ocupando el porcentaje de CPU que estaba siendo utilizado por el proceso countA.sh. Por lo que podemos concluir que con el atributo CPUShares la restricción solamente se cumple siempre y cuando los demás servicios que tengan CPUShares se estén ejecutando.
+
+![GitHub Logo1](images/15.PNG)
