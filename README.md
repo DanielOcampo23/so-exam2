@@ -72,7 +72,18 @@ Después de esto podemos observamos cómo el proceso countA.sh (PID 3036) sigue 
 
 ![GitHub Logo1](images/10.PNG)
 
-4. Para realizar esta prueba de concepto, utilizamos los mismos dos servicios que creamos en el punto anterior, pero esta vez utilizaremos otro atributo para cambiar la forma en la que se debe restringir el uso de la CPU. En este caso ejecutamos los siguientes comandos ```systemctl set-property countA.service CPUShares=7168``` y ```systemctl set-property countB.service CPUShares=3072``` en donde al servicio countA 
+4. Para realizar esta prueba de concepto, utilizamos los mismos dos servicios que creamos en el punto anterior, pero esta vez utilizaremos otro atributo para cambiar la forma en la que se debe restringir el uso de la CPU. En este caso ejecutamos los siguientes comandos ```systemctl set-property countA.service CPUShares=7168``` y ```systemctl set-property countB.service CPUShares=3072``` en donde al servicio countA le asignamos 7168 CPUShares y al servicio countB le asignamos 3072 CPUShares, estos valores significan lo siguiente:
+
+La suma de todos los CPUShares es 10240 = 7168 + 3072 en donde 7168 (Shares del servicio countA) representan el 70% del total y 3072 (Shares del servicio countB) el 30% del total.
+
+![GitHub Logo1](images/11.PNG)
+
+Ejecutamos los dos procesos y verificamos su estado.
+
+![GitHub Logo1](images/12.PNG)
+
+En la siguiente imagen podemos observar efectivamente como el proceso countA.sh (PID 3193) ocupa el 69.8% de la CPU y el proceso countB.sh (PID 3200) ocupa solo el 29.6% de la CPU, ambos respetando las restricciones impuestas.
+
 
 
 
