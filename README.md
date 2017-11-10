@@ -5,6 +5,10 @@
 **Tema:** Namespaces, CGroups, LXC
 **Correo:** daniel.barragan at correo.icesi.edu.co
 
+**Estudiante:** Daniel Steven Ocampo
+**Código:** A00053980
+**Github:** https://github.com/DanielOcampo23/so-exam2
+
 ### Objetivos
 * Comprender los fundamentos que dan origen a las tecnologías de contenedores virtuales
 * Conocer y emplear funcionalidades del sistema operativo para asignar recursos a procesos
@@ -35,7 +39,7 @@ Y después de esto ejecutamos el comando ```systemctl daemon-reload``` para que 
 (foto daemon )
 
 
-Después corremos el servicio con el comando ```systemctl status countA.service``` y volvemos a verificar su estado para validar de que esté activo como lo mostrará la siguiente
+Después cambiamos el estado de los servicios con el comando ```systemctl enable countA.service``` y ```systemctl enable countB.service``` para poder agregar las propiedades del CPUQuota el cual restringe el porcentaje de uso del nucleo para esto ejecutamos el comando  ```systemctl set-property countA.service CPUQuota=50%``` para ambos servicios y posterior a esto se activirán dichos servicios con el seguiente comando ```systemctl start countA.service``` igualmente para ambos servicios y volvemos a verificar su estado para validar de que esté activo como lo mostrará la siguiente imagen
 
 (foto activo)
 
