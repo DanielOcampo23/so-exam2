@@ -70,5 +70,9 @@ Luego detenemos el proceso countB.sh (PID 3043) con el comando ```systemctl stop
 
 Después de esto podemos observamos cómo el proceso countA.sh (PID 3036) sigue utilizando el 49.8% de la CPU cumpliendo correctamente con la restricción que configuramos a pesar de que hay casi un 50% CPU libre.
 
+![GitHub Logo1](images/10.PNG)
+
+4. Para realizar esta prueba de concepto, utilizamos los mismos dos servicios que creamos en el punto anterior, pero esta vez utilizaremos otro atributo para cambiar la forma en la que se debe restringir el uso de la CPU. En este caso ejecutamos los siguientes comandos ```systemctl set-property countA.service CPUShares=7168``` y ```systemctl set-property countB.service CPUShares=3072``` en donde al servicio countA 
+
 
 
