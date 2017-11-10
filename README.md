@@ -6,8 +6,8 @@
 **Correo:** daniel.barragan at correo.icesi.edu.co
 
 **Estudiante:** Daniel Steven Ocampo   
-**Código:** A00053980 
-**Github:** https://github.com/DanielOcampo23/so-exam2 
+**Código:** A00053980    
+**Github:** https://github.com/DanielOcampo23/so-exam2      
 
 ### Objetivos
 * Comprender los fundamentos que dan origen a las tecnologías de contenedores virtuales
