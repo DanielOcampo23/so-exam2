@@ -36,16 +36,15 @@ do
    let i=i+1;
 done
 ```
+Este algoritmo lo único que realice es una suma dentro de un ciclo infinito, con el fin de que el haga este cálculo de forma indeterminada hasta que manualmente se pare este proceso.
 
-Estos archivos los creamos en la carpeta ```/home/operativos/scripts/``` y les otorgamos permisos de ejecución.
+Estos dos scripts los creamos en la carpeta ```/home/operativos/scripts/``` y les otorgamos permisos de ejecución.
 
  ![GitHub Logo1](images/2.PNG)
  
  ![GitHub Logo1](images/3.PNG)
 
-
-
-Después de esto se crean los scrips que estresaran el sistema mediante un ciclo infinito, para esto se crearán dos scripts llamados ```countA.sh``` y ```countB.sh``` con todos los permisos
+Luego debemos crear estos dos scripts como servicios para que estos puedan ser administrados por systemd
 
 
 Después de esto se tiene que crear como un servicio para poder ser ejecutado bajo systemd, para esto tenemos que ir a el directorio ```etc/systemd/system``` y dentro de esta carpeta crear ```countA.service``` y ```countB.service```
